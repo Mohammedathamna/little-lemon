@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Greek Salad",
+    "price": "$12.99",
+    "description": "A fresh Greek salad with tomatoes, cucumbers, olives, and feta cheese.",
+    "image": "/assets/greek salad.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Bruchetta",
+    "price": "$10.99",
+    "description": "A delicious Italian appetizer made with toasted bread, tomatoes, and basil.",
+    "image": "/assets/bruchetta.svg"
+  },
+  {
+    "id": 3,
+    "title": "Lemon Dessert",
+    "price": "$8.99",
+    "description": "A light and refreshing lemon dessert made with fresh lemons and a hint of mint.",
+    "image": "/assets/lemon dessert.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Chocolate Cake",
+    "price": "$9.99",
+    "description": "Rich chocolate cake topped with creamy ganache.",
+    "image": "/assets/Chocolate-Cake.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Caesar Salad",
+    "price": "$11.50",
+    "description": "Crisp romaine with creamy Caesar dressing and croutons.",
+    "image": "/assets/caesar_salad.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Caprese Skewers",
+    "price": "$7.99",
+    "description": "Fresh mozzarella, tomato, and basil skewers with balsamic.",
+    "image": "/assets/caprese_skewers.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Chocolate Mousse",
+    "price": "$9.99",
+    "description": "Decadent chocolate mousse topped with whipped cream.",
+    "image": "/assets/Chocolate Mousse.jpeg"
+  },
+  {
+    "id": 8,
+    "title": "Pasta Primavera",
+    "price": "$14.99",
+    "description": "Pasta with seasonal vegetables in a light garlic sauce.",
+    "image": "/assets/pasta_primavera.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Grilled Salmon",
+    "price": "$18.99",
+    "description": "Grilled salmon served with a side of seasonal vegetables.",
+    "image": "/assets/grilled_salmon.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Tiramisu",
+    "price": "$6.99",
+    "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+    "image": "/assets/tiramisu.jpg"
+  }
+]
