@@ -1,6 +1,5 @@
 import React, { useState , useEffect } from "react";
 import Card from "../components/Card";
-import { Link } from "react-router-dom";
 
 
 
@@ -35,16 +34,22 @@ function Menu() {
 
       <div className="cards">
         {Items.slice(0, visibleCount).map((item) => (
-          <Link to={`/order/${item.id}`} style={{ textDecoration: "none" }}>
-            <Card
-              id={item.id}
-              image={item.image}
-              title={item.title}
-              price={item.price}
-              description={item.description} />
-          </Link>
-
-        
+          // <Link to={`/order/${item.id}`} style={{ textDecoration: "none" }}>
+          //   <Card
+          //     id={item.id}
+          //     image={item.image}
+          //     title={item.title}
+          //     price={item.price}
+          //     description={item.description} />
+          // </Link>
+          <Card
+            key={item.id}
+            id={item.id}
+            image={item.image}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+          />
         ))}
       </div>
 

@@ -7,8 +7,8 @@ import Bruchetta from "../assets/bruchetta.svg";
 import Lemondessert from "../assets/lemon dessert.jpg";
 import Pics from "../components/Pics";
 import BlogPost from "../components/BlogPost";
-import { useNavigate , Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -41,7 +41,7 @@ function Home() {
             friendly staff make us the perfect spot for a casual meal with
             family and friends.
           </p>
-          <Button title="Reserve a Table" onClick={() => {navigate("/reservations");}} />
+          <Button aria-label="Reserve a Table" title="Reserve a Table" onClick={() => {navigate("/reservations");}} />
         </div>
         <div className="hero-img">
           <img src={resturant} alt="Little Lemon" />
@@ -55,14 +55,21 @@ function Home() {
         </div>
         <div className="cards">
           {Items.slice(0, 3).map((item) => (
-                    <Link to={`/order/${item.id}`} style={{ textDecoration: "none" }}>
-                      <Card
+                    // <Link key={item.id} to={`/order/${item.id}`} style={{ textDecoration: "none" }}>
+                    //   <Card
+                    //     id={item.id}
+                    //     image={item.image}
+                    //     title={item.title}
+                    //     price={item.price}
+                    //     description={item.description} />
+                    // </Link>
+                    <Card
+                        key={item.id}
                         id={item.id}
                         image={item.image}
                         title={item.title}
                         price={item.price}
                         description={item.description} />
-                    </Link>
           
                   
                   ))}

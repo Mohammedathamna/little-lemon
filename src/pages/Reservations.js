@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import restaurant from "../assets/restaurant.jpg";
 
 export default function Reservations({ availableTimes, dispatch , submitForm}) {
@@ -10,6 +10,28 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
     guests: 1,
     occasion: "",
   });
+
+  const [isValid, setIsValid] = useState(false);
+
+  const validateForm = React.useCallback(() => {
+    const { name, email, date, time, guests } = formData;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check that all required fields are filled and valid
+    const valid =
+      name.trim() &&
+      emailPattern.test(email) &&
+      date &&
+      time &&
+      guests >= 1 &&
+      guests <= 20;
+
+    setIsValid(Boolean(valid));
+  } , [formData]);
+
+  useEffect(() => {
+    validateForm();
+  }, [validateForm]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +59,7 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
         <form className="reservation-form" onSubmit={handleSubmit}>
           <label>
             Name:
-            <input
+            <input aria-label="Name"
               type="text"
               name="name"
               value={formData.name}
@@ -48,7 +70,7 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
 
           <label>
             Email:
-            <input
+            <input aria-label="Email"
               type="email"
               name="email"
               value={formData.email}
@@ -59,7 +81,7 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
 
           <label>
             Date:
-            <input
+            <input aria-label="Date"
               type="date"
               name="date"
               value={formData.date}
@@ -70,7 +92,7 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
 
           <label>
             Time:
-            <select
+            <select aria-label="Time"
               name="time"
               value={formData.time}
               onChange={handleChange}
@@ -86,7 +108,7 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
 
           <label>
             Number of Guests:
-            <input
+            <input aria-label="Number of Guests"
               type="number"
               name="guests"
               value={formData.guests}
@@ -99,7 +121,7 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
 
           <label>
             Occasion (optional):
-            <select
+            <select aria-label="Occasion"
               name="occasion"
               value={formData.occasion}
               onChange={handleChange}>
@@ -110,7 +132,7 @@ export default function Reservations({ availableTimes, dispatch , submitForm}) {
             </select>
           </label>
 
-          <button type="submit">Reserve Now</button>
+          <button aria-label="Reserve Now" type="submit" disabled={!isValid}>Reserve Now</button>
         </form>
 
         <div className="img">

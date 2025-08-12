@@ -58,7 +58,7 @@ export default function OrderOnline() {
         <form className="order-form" onSubmit={handleSubmit}>
           {/* اختيار الوجبة */}
           <label className="form-label">Choose a meal:</label>
-          <select
+          <select aria-label="Select Meal"
             className="form-select"
             value={selectedMealId}
             onChange={(e) => setSelectedMealId(e.target.value)}>
@@ -91,7 +91,7 @@ export default function OrderOnline() {
 
           {/* بيانات العميل */}
           <label className="form-label">Delivery Address:</label>
-          <input
+          <input aria-label="Delivery Address"
             className="form-input"
             type="text"
             value={address}
@@ -100,7 +100,7 @@ export default function OrderOnline() {
           />
 
           <label className="form-label">Phone Number:</label>
-          <input
+          <input aria-label="Phone Number"
             className="form-input"
             type="tel"
             value={phone}
@@ -108,7 +108,7 @@ export default function OrderOnline() {
             required
           />
 
-          <Button onClick={handleSubmit} title="Confirm Order">
+          <Button aria-label="Confirm Order" onClick={handleSubmit} title="Confirm Order">
             Confirm Order
           </Button>
         </form>
