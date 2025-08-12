@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import restaurant from "../assets/restaurant.jpg";
 
-export default function Reservations() {
+export default function Reservations({ availableTimes, dispatch , submitForm}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,17 +13,21 @@ export default function Reservations() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+
+    if (name === "date") {
+      dispatch(value); // نرسل التاريخ للـ reducer لتحديث المواعيد
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Reservation Data:", formData);
-    alert("Your table has been reserved!");
-    setFormData({ name: "", email: "", date: "", time: "", guests: 1 , occasion: "" });
+    submitForm(formData);
+    
   };
 
   return (
@@ -66,13 +70,18 @@ export default function Reservations() {
 
           <label>
             Time:
-            <input
-              type="time"
+            <select
               name="time"
               value={formData.time}
               onChange={handleChange}
-              required
-            />
+              required>
+              <option value="">Select time</option>
+              {availableTimes.map((time, index) => (
+                <option key={index} value={time}>
+                  {time}
+                </option>
+              ))}
+            </select>
           </label>
 
           <label>
@@ -87,13 +96,13 @@ export default function Reservations() {
               required
             />
           </label>
+
           <label>
             Occasion (optional):
             <select
               name="occasion"
               value={formData.occasion}
-              onChange={handleChange}
-            >
+              onChange={handleChange}>
               <option value="">Select an occasion</option>
               <option value="birthday">Birthday</option>
               <option value="anniversary">Anniversary</option>
@@ -103,20 +112,11 @@ export default function Reservations() {
 
           <button type="submit">Reserve Now</button>
         </form>
+
         <div className="img">
           <img src={restaurant} alt="Reservation" />
         </div>
       </fieldset>
-
-      <div className="reservation-info">
-        <h2>Your Reservation Details</h2>
-        <p>Name: {formData.name}</p>
-        <p>Email: {formData.email}</p>
-        <p>Date: {formData.date}</p>
-        <p>Time: {formData.time}</p>
-        <p>Number of Guests: {formData.guests}</p>
-        <p>Occasion: {formData.occasion}</p>
-      </div>
     </div>
   );
 }
