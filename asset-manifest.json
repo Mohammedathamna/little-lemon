@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Mohammedathamna/little-lemon/static/css/main.a68177e2.css",
+    "main.js": "/Mohammedathamna/little-lemon/static/js/main.fe73fe92.js",
+    "static/js/453.4e526771.chunk.js": "/Mohammedathamna/little-lemon/static/js/453.4e526771.chunk.js",
+    "static/media/bruchetta.svg": "/Mohammedathamna/little-lemon/static/media/bruchetta.29ea078fea3d3120ed22402e901b5bbc.svg",
+    "static/media/greek salad.jpg": "/Mohammedathamna/little-lemon/static/media/greek salad.bed423a1fab5b210e347.jpg",
+    "static/media/restauranfood.jpg": "/Mohammedathamna/little-lemon/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
+    "static/media/restaurant.jpg": "/Mohammedathamna/little-lemon/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
+    "static/media/Logo.svg": "/Mohammedathamna/little-lemon/static/media/Logo.f72c913c48c5334f78f2c336ec36f22b.svg",
+    "index.html": "/Mohammedathamna/little-lemon/index.html",
+    "main.a68177e2.css.map": "/Mohammedathamna/little-lemon/static/css/main.a68177e2.css.map",
+    "main.fe73fe92.js.map": "/Mohammedathamna/little-lemon/static/js/main.fe73fe92.js.map",
+    "453.4e526771.chunk.js.map": "/Mohammedathamna/little-lemon/static/js/453.4e526771.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a68177e2.css",
+    "static/js/main.fe73fe92.js"
+  ]
+}
